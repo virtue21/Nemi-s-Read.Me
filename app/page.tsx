@@ -5,7 +5,9 @@ import dynamic from "next/dynamic"
 import { Header } from "@/components/header"
 import { ArticleGrid } from "@/components/article-grid"
 
-const ClientToaster = dynamic(() => import("@/components/ui/toaster"), {
+const ClientToaster = dynamic(() => import("@/components/ui/toaster").then(mod => mod.Toaster), {
+  ssr: false,
+})
   ssr: false,
 })
 
