@@ -28,4 +28,3 @@ export async function GET() {
 export const config = {
   schedule: "0 7 * * *" // Runs once per day at 7AM UTC (free Vercel plan)
 }
-
