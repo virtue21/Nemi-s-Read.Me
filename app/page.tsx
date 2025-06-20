@@ -5,11 +5,8 @@ import dynamic from "next/dynamic"
 import { Header } from "@/components/header"
 import { ArticleGrid } from "@/components/article-grid"
 
-const ClientToaster = dynamic(() => import("@/components/ui/toaster").then(mod => mod.Toaster), {
-  ssr: false,
-})
-  ssr: false,
-})
+// Dynamically load the Toaster *after* hydration to avoid SSR issues
+const ClientToaster = dynamic(() => import("@/components/ui/toaster").then((mod) => mod.Toaster), { ssr: false })
 
 interface Article {
   id: string
