@@ -25,3 +25,7 @@ export async function GET() {
     return NextResponse.json({ success: false, error: "Failed to fetch articles" }, { status: 500 })
   }
 }
+export const config = {
+  schedule: "0 7 * * *" // Runs once per day at 7AM UTC (free Vercel plan)
+}
+
